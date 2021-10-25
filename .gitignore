@@ -1,8 +1,21 @@
+#Visual Studio files and folders
 .vs/
 Debug/
 Release/
-
 *.sln
 *.vcxproj
 *.filters
 *.user
+
+#Makefile
+obj/*.o
+*.d
+
+#Unix compiled Binary
+brainfuck
+
+#Windows compiled Binary
+*.exe
+
+#Repl.it specific files
+.replit

@@ -4,7 +4,7 @@ Brainfuck::Brainfuck(unsigned int array_size) {
 	init();
 	this->array_size = array_size;
 	// initialize output array with all 0
-	for (int i = 0; i < this->array_size; i++) {
+	for (unsigned int i = 0; i < this->array_size; i++) {
 		memory.push_back(0);
 	}
 }
