@@ -2,9 +2,16 @@
 
 ## Installation
 ```
-1. $git clone https://github.com/TimGosch/Brainfuck
+Clone this repository:
 
-2. $make
+$git clone https://github.com/TimGosch/Brainfuck
+```
+```
+Compile brainfuck binary
 
+$make
+```
+```
+Run brainfuck
 3. $./brainfuck
 ```
