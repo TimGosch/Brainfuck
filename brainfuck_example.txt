@@ -1,6 +1,6 @@
 This script will print an "A" to the console
 It will ignore every character that is not used in the Brainfuck language
-As an example I will add a few comments as to what the program does.
+As an example I will add a few comments as to what the program does
 The backslashes are only used for better readability
 
 ++++++++	//Increase cell 0 by 8

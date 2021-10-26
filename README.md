@@ -1,20 +1,23 @@
 # C++ Brainfuck Interpreter
 
 ## Installation
-Clone this repository:
+#### Clone this repository:
 ```
 $git clone https://github.com/TimGosch/Brainfuck
 ```
-Compile brainfuck binary
+#### Compile brainfuck binary
 ```
 $make
 ```
-Run brainfuck
+#### Run brainfuck
 ```
 $./brainfuck
 ```
+#### Optional flags
+```
+-h                      : display help menu
 
-## TODO
-- [ ] Ask for a string input if no arguments are provided on startup
-- [ ] add -e flag to evaluate a string passed as argument
-- [ ] add -f flag to pass a filename
+-e <brainfuck string>   : evaluate the passed string
+
+-f <fileName>           : evaluate brainfuck code from a file
+```
