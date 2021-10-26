@@ -13,3 +13,7 @@ Run brainfuck
 ```
 $./brainfuck
 ```
+
+TODO:
+
+-[] add -e flag to evaluate a string passed as argument
