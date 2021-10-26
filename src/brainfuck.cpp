@@ -1,29 +1,19 @@
 #include "include/brainfuck.h"
 
 Brainfuck::Brainfuck(unsigned int array_size) {
-	init();
-	this->array_size = array_size;
-	// initialize output array with all 0
-	for (unsigned int i = 0; i < this->array_size; i++) {
-		memory.push_back(0);
-	}
-}
-
-/*
- * Initialise Object with default params to avoid unpredictable behavior.
- */
-void Brainfuck::init() {
+	//Initialise Object with default params to avoid unpredictable behavior.
 	pointer = 0;
-	array_size = 0;
-	memory.clear();
+	//Initialize Memory Array with all 0.
+	this->memory = new int[array_size] {};
 }
 
-string Brainfuck::decode(string brainfuckString) {
+void Brainfuck::run(string brainfuckString) {
 	string returnString = "";
-
+	//Input and output char
+	char out = 0;
+	char in = 0;
 	// run over brainfuck code
 	for (size_t i = 0; i < brainfuckString.length(); i++) {
-		char c;
 		switch (brainfuckString[i]) {
 		case '>':
 			pointer++;
@@ -38,51 +28,53 @@ string Brainfuck::decode(string brainfuckString) {
 			memory[pointer]--;
 			break;
 		case '.':
-			c = memory[pointer];
-			returnString.push_back(c);
+			out = memory[pointer];
+			cout << out;
 			break;
 		case ',':
-			// TODO: Implement
+			cout << "Enter Letter: ";
+			cin >> in;
+			memory[pointer] = in;
 			break;
 		case '[':
-			if (memory[pointer] != 0) {
+			if (memory[pointer] == 0) {
+				//find matching closing bracket
+				//Set counter and Step to 1 to start with the symbol behind the opening bracket
 				int counter = 1;
 				int step = 1;
 				while (counter > 0) {
-					if (brainfuckString[i + step] == ']') {
+					if (brainfuckString[i+ step] == ']') {
 						counter--;
 					}
 					else if (brainfuckString[i + step] == '[') {
 						counter++;
-					}if (counter != 0) {
-						step++;
 					}
-					else {
-						step--;
-					}
+					step++;
 				}
-				//Create Substring 
-				string sub = brainfuckString.substr(i + 1, step);
-				//TODO: Recursively call decode on substring
-				continue;
-			}
-			else {
-				//TODO Implement skip over loop
+				//Set Pointer to new Position
+				i += step;
 			}
 			break;
 		case ']':
+			if (memory[pointer] > 0) {
+				int counter = 1;
+				int step = 1;
+				while (counter > 0) {
+					if (brainfuckString[i - step] == '[') {
+						counter--;
+					}
+					else if (brainfuckString[i - step] == ']') {
+						counter++;
+					}
+					if (counter > 0) {
+						step++;
+					}
+				}
+				i -= step;
+			}
 			break;
 		default:
 			break;
 		}
 	}
-	return returnString;
-}
-string Brainfuck::encode(string asciiString) {
-	string returnString = "";
-	return returnString;
-}
-
-void Brainfuck::workSubstring(string substring) {
-
 }

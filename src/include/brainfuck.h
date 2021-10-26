@@ -1,19 +1,15 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <cstdint>
+#include <set>
 
 using namespace std;
 
 class Brainfuck {
 public:
 	Brainfuck(unsigned int array_size);
-	string decode(string brainfuckString);
-	string encode(string asciiString);
-	void workSubstring(string subString);
-	void init();
+	void run(string brainfuckString);
 private:
 	unsigned int pointer;
-	unsigned int array_size;
-	vector<int> memory;
+	int* memory;
 };
