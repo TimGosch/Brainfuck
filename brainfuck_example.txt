@@ -1,0 +1,17 @@
+This script will print an "A" to the console
+It will ignore every character that is not used in the Brainfuck language
+As an example I will add a few comments as to what the program does.
+The backslashes are only used for better readability
+
+++++++++	//Increase cell 0 by 8
+[		//While cell 0 is greater than 0
+>		//Move pointer to cell 1	
+++++++++	//Increase cell 1 by 8
+<		//move pointer to cell 0
+-		//decreate pointer by 1 
+]		//While cell 1 is greater than 0 go back to line 2 otherwise continue
+		//The above Loop will effectively set the value of cell 1 to be 64 (8x8)
+		//This is way shorter than increasing the value in that cell 64 times
+>		//move pointer from cell 0 to cell 1
++		//Increase value in cell 1 by 1
+.		//Output Value of cell 1 as ASCII character (65=A)
