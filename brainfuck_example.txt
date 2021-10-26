@@ -8,7 +8,7 @@ The backslashes are only used for better readability
 >		//Move pointer to cell 1	
 ++++++++	//Increase cell 1 by 8
 <		//move pointer to cell 0
--		//decreate pointer by 1 
+-		//decrease cell value by 1 
 ]		//While cell 1 is greater than 0 go back to line 2 otherwise continue
 		//The above Loop will effectively set the value of cell 1 to be 64 (8x8)
 		//This is way shorter than increasing the value in that cell 64 times
