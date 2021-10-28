@@ -15,3 +15,5 @@ The backslashes are only used for better readability
 >		//move pointer from cell 0 to cell 1
 +		//Increase value in cell 1 by 1
 .		//Output Value of cell 1 as ASCII character (65=A)
+<   //move pointer to cell 0
+++++++++++. //Increase Cell to 10(/n) and output value
